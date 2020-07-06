@@ -1,0 +1,35 @@
+
+<!-- <table class="table table-hover">
+    <td>Description</td>
+    <td>Priority</td>
+    <td>Status</td>
+    <td></td>
+    <tr *ngFor="let task of tasks;">
+        <td>{{task.description}}</td>
+        <td>{{task.priority}}</td>
+        <td>{{task.status}}</td>
+        <td><a><i class="far fa-trash-alt fa-lg text-danger" (click)="deletetask(task.id)"></i></a></td>
+    </tr>
+</table> -->
+<table class="table">
+    <thead style="background-color: black;" class="thead-dark">
+      <tr style="color: cornsilk;">
+        <td>Description</td>
+        <td>Priority</td>
+        <td>Status</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let task of tasks;">
+            <td>{{task.description}}</td>
+            <td>{{task.priority}}</td>
+            <td>{{task.status}}</td>
+            <td><a><i class="far fa-trash-alt fa-lg text-danger" (click)="deletetask(task.id)"></i></a></td>
+            <td [routerLink]="['/updatetask',task.id]"><a><i class="fas fa-sync-alt"></i></a></td>
+        </tr>
+    </tbody>
+  </table>
+
+<a routerLink="/addtask" ><i class="fas fa-plus-circle"></i> Add a new task</a>
